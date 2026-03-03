@@ -363,6 +363,8 @@ http POST http://127.0.0.1:8000/predict/regression \
 ```
 
 ---
+#This how it look like:
+<img width="2239" height="1249" alt="Screenshot 2026-03-04 022238" src="https://github.com/user-attachments/assets/38c79218-ee4c-4629-ab73-66b1554578a0" />
 
 ## 8. How everything works together (step by step)
 
@@ -390,8 +392,10 @@ http POST http://127.0.0.1:8000/predict/regression \
    - Displays the predicted price clearly in USDT and ETB.
    - Renders feature importance as bars.
    - Shows model metrics and details in the metadata panel.
-##author yeabsra andnet,
+   - 
+#author yeabsra andnet, 
 ##3rd year software engineer student at astu,
 ##copyright 2026 
+
 
 
