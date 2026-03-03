@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Car Price Prediction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <h1>Car Price Prediction</h1>
+        <p>Enter car details to estimate its market price.</p>
+      </header>
+
+      <main class="content">
+        <section class="card">
+          <h2>Input Features</h2>
+          <form id="prediction-form" novalidate>
+            <div class="form-row">
+              <label for="mileage">Mileage (km)</label>
+              <input
+                type="number"
+                id="mileage"
+                name="mileage"
+                min="0"
+                max="300000"
+                step="1000"
+                required
+              />
+              <small class="hint">0 - 300,000 km</small>
+              <div class="error" data-error-for="mileage"></div>
+            </div>
+
+            <div class="form-row">
+              <label for="age">Age (years)</label>
+              <input
+                type="number"
+                id="age"
+                name="age"
+                min="0"
+                max="30"
+                step="1"
+                required
+              />
+              <small class="hint">0 - 30 years</small>
+              <div class="error" data-error-for="age"></div>
+            </div>
+
+            <div class="form-row">
+              <label for="engine_size">Engine size (L)</label>
+              <input
+                type="number"
+                id="engine_size"
+                name="engine_size"
+                min="0.8"
+                max="6.0"
+                step="0.1"
+                required
+              />
+              <small class="hint">0.8 - 6.0 L</small>
+              <div class="error" data-error-for="engine_size"></div>
+            </div>
+
+            <div class="form-row">
+              <label for="horsepower">Horsepower (HP)</label>
+              <input
+                type="number"
+                id="horsepower"
+                name="horsepower"
+                min="40"
+                max="600"
+                step="10"
+                required
+              />
+              <small class="hint">40 - 600 HP</small>
+              <div class="error" data-error-for="horsepower"></div>
+            </div>
+
+            <div class="form-row">
+              <label for="doors">Number of doors</label>
+              <input
+                type="number"
+                id="doors"
+                name="doors"
+                min="2"
+                max="5"
+                step="1"
+                required
+              />
+              <small class="hint">2 - 5 doors</small>
+              <div class="error" data-error-for="doors"></div>
+            </div>
+
+            <div class="form-row">
+              <label for="brand">Brand</label>
+              <select id="brand" name="brand" required>
+                <option value="" disabled selected>Select brand</option>
+                <option value="Toyota">Toyota</option>
+                <option value="Hyundai">Hyundai</option>
+                <option value="Suzuki">Suzuki</option>
+                <option value="BMW">BMW</option>
+                <option value="Mercedes">Mercedes</option>
+                <option value="Volkswagen">Volkswagen</option>
+              </select>
+              <small class="hint">Common brands in the local market</small>
+              <div class="error" data-error-for="brand"></div>
+            </div>
+
+            <div class="form-row">
+              <label for="fuel_type">Fuel type</label>
+              <select id="fuel_type" name="fuel_type" required>
+                <option value="" disabled selected>Select fuel type</option>
+                <option value="petrol">Petrol</option>
+                <option value="diesel">Diesel</option>
+                <option value="hybrid">Hybrid</option>
+                <option value="ev">Electric (EV)</option>
+              </select>
+              <small class="hint">EVs often benefit from lower taxes</small>
+              <div class="error" data-error-for="fuel_type"></div>
+            </div>
+
+            <button type="submit" id="submit-button">Predict Price</button>
+            <div class="form-error" id="form-error"></div>
+          </form>
+        </section>
+
+        <section class="card">
+          <h2>Prediction Result</h2>
+          <div id="result">
+            <p class="placeholder">Fill in the form and click Predict.</p>
+          </div>
+
+          <h3>Feature Importance</h3>
+          <div id="feature-importance" class="feature-importance"></div>
+
+          <h3>Model Information</h3>
+          <pre id="model-metadata" class="metadata"></pre>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>
+          Backend: FastAPI • Model: Random Forest Regressor • Task: Car price
+          regression
+        </p>
+      </footer>
+    </div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
+

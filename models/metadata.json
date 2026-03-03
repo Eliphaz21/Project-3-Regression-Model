@@ -1,0 +1,44 @@
+{
+  "task": "car_price_prediction",
+  "target": "price_usd",
+  "feature_names": [
+    "mileage",
+    "age",
+    "engine_size",
+    "horsepower",
+    "doors",
+    "brand_toyota",
+    "brand_hyundai",
+    "brand_suzuki",
+    "brand_bmw",
+    "brand_mercedes",
+    "brand_volkswagen",
+    "fuel_petrol",
+    "fuel_diesel",
+    "fuel_hybrid",
+    "fuel_ev"
+  ],
+  "brand_categories": [
+    "Toyota",
+    "Hyundai",
+    "Suzuki",
+    "BMW",
+    "Mercedes",
+    "Volkswagen"
+  ],
+  "fuel_categories": [
+    "petrol",
+    "diesel",
+    "hybrid",
+    "ev"
+  ],
+  "target_transform": "log",
+  "metrics": {
+    "rmse": 3647.3635795304076,
+    "mae": 2854.533594990995,
+    "r2": 0.8941680041425999
+  },
+  "model_type": "RandomForestRegressor",
+  "n_estimators": 200,
+  "random_state": 42
+}
